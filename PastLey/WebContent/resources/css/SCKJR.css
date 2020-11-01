@@ -50,20 +50,6 @@ body.sckjr-body {
 ********************* DISPLAY *********************
 ***************************************************/
 /***************************************************
-** GRID
-***************************************************/
-.sckjr-display-grid {
-  width: 100%;
-  display: none;
-  position: absolute;
-  top: 5px;
-  z-index: 1000;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  grid-template-areas: "categorias subcategorias subcategorias subcategorias";
-}
-
-/***************************************************
 ********************* NAVBAR **********************
 ***************************************************/
 /***************************************************
@@ -97,6 +83,10 @@ body.sckjr-body {
 .sckjr-navbar-advanced .sckjr-navbar-advanced__container-buttons button .sckjr-navbar-advanced__container-buttons-menu {
   display: inline-block;
 }
+.sckjr-navbar-advanced a {
+  text-decoration: none;
+  outline: none;
+}
 .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links {
   display: flex;
   justify-content: space-between;
@@ -125,7 +115,7 @@ body.sckjr-body {
 .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-advanced:hover {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
-.sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-items {
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-items a {
   color: #9e9e9e;
   border: 1px solid transparent;
   padding: 7px;
@@ -133,7 +123,246 @@ body.sckjr-body {
   text-decoration: none;
   font-size: 0.875em;
 }
-.sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-items:hover {
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-items a:hover {
   border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid {
+  position: relative;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure {
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 5px;
+  z-index: 1000;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "categorias subcategorias subcategorias subcategorias";
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure.sckjr-active {
+  display: grid;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure::before {
+  content: "";
+  display: block;
+  background: transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #FFFFFF;
+  position: absolute;
+  top: -5px;
+  left: 65px;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure > div {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-button-return {
+  background: #9e9e9e;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 1.25em;
+  font-size: 1em;
+  cursor: pointer;
+  display: none;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-button-return i {
+  margin-right: 10px;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-categories {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: categorias;
+  padding-top: 10px;
+  min-height: 300px;
+  overflow: auto;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-categories .sckjr-subtitle {
+  display: none;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-categories a {
+  color: #34332F;
+  font-size: 0.875em;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-categories a i {
+  display: none;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-categories a:hover {
+  color: #ff9800;
+  font-weight: bold;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-categories a:hover i {
+  display: inline-block;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: subcategorias;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories.sckjr-active {
+  display: grid;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories img {
+  width: 100%;
+  vertical-align: top;
+  height: 100%;
+  object-fit: cover;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories-links {
+  padding-top: 10px;
+  height: 100%;
+  max-height: 300px;
+  overflow: auto;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories-links a {
+  color: #34332F;
+  display: block;
+  font-size: 0.875em;
+  padding: 10px 20px;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories-links a:hover {
+  color: #ff9800;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories-links .sckjr-subtitle {
+  font-size: 1.125em;
+  font-weight: normal;
+  color: #ff9800;
+  padding: 10px 20px;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-banner a {
+  display: block;
+  height: 100%;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  overflow-y: scroll;
+  overflow-x: none;
+}
+.sckjr-navbar-advanced .sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-gallery a {
+  width: 50%;
+  height: 50%;
+}
+@media screen and (max-width: 1000px) {
+  .sckjr-navbar-advanced .sckjr-container {
+    width: 100%;
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sckjr-navbar-advanced .sckjr-container {
+    width: 90%;
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-buttons {
+    display: flex;
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    left: 0;
+    background: #305297;
+    height: 100vh;
+    width: 80%;
+    z-index: 2000;
+    transition: 0.3s ease all;
+    transform: translate(-100%);
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-active {
+    transform: translate(0%);
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-advanced {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-advanced i {
+    position: static;
+    margin-left: 20px;
+    transform: rotate(-90deg);
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-items {
+    width: 100%;
+  }
+  .sckjr-navbar-advanced .sckjr-navbar-advanced__container-links .sckjr-navbar-advanced__container-links-items a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure {
+    display: grid;
+    transition: 0.3s ease all;
+    transform: translateX(-100%);
+    z-index: 3000;
+    width: 80%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    grid-template-areas: "categorias categorias categorias categorias";
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure.sckjr-active {
+    transform: translateX(0%);
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure::before {
+    display: none;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-button-return {
+    display: inline-block;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-categories .sckjr-subtitle {
+    display: block;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease all;
+    transform: translateX(-100%);
+    overflow: auto;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories.sckjr-active {
+    transform: translateX(0%);
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories {
+    grid-template-columns: 1fr;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-subcategories-links {
+    min-height: 50vh;
+    overflow: auto;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-banner {
+    width: 100%;
+    min-height: 250px;
+    max-height: 350px;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure .sckjr-navbar-advanced__container-grid-structure-container-subcategories .sckjr-navbar-advanced__container-grid-structure-container-subcategories-gallery a {
+    width: 25%;
+    height: 100%;
+  }
+  .sckjr-navbar-advanced sckjr-navbar-advanced__container-grid .sckjr-navbar-advanced__container-grid-structure > .sckjr-navbar-advanced__container-grid-structure-categories {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+  }
 }
 /*# sourceMappingURL=SCKJR.css.map */

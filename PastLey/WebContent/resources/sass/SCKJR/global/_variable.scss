@@ -126,9 +126,28 @@ $default:(
 						"item":(
 							"primary": getMap($color, ("gray", "base")),
 						),
+						"advanced": (
+							"primary": getMap($project, ("color", "body")),
+							"link" :(
+								"hover": getMap($color, ("orange", "base")),
+							),
+						),
+					),
+					"box":(
+						"shadow": (0px 3px 6px rgba(0,0,0,.10)),
 					),
 					"grid":(
 						"template": "categorias subcategorias subcategorias subcategorias",
+						"media": "categorias categorias categorias categorias",
+					),
+					"dimension":(
+						"advanced":(
+							"min":(300px, auto),
+						),
+						"banner":(
+							"min": (auto, 250px),
+							"max" : (auto, 350px),
+						),
 					),
 				),
 			),

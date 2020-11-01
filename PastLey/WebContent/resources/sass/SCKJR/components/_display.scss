@@ -8,27 +8,5 @@
 	   /***************************************************
  		********************* DISPLAY *********************
  		***************************************************/
- 		
- 		$--element-children-1: getMap($--element, ("all", "grid"));
- 		$--element-children-1-statu: getMap($--element-children-1, ("statu"));
- 		$--element-children-1-name-type: #{getMap($--element-children-1, ("name", "type"))};
-		$--element-children-1-name-title: #{getMap($--element-children-1, ("name", "title"))};
-		$--element-children-1-name-symbol: #{getMap($--element-children-1, ("name", "symbol"))};
-		$--element-children-1-all: #{$--project-name}#{$--element-name}#{$--element-children-1-name-title};
-		@if $--element-children-1-statu{
-		   /***************************************************
- 			** GRID
- 			***************************************************/
- 			#{$--element-children-1-name-type}#{$--element-children-1-all}{
- 				width: 100%;
-				display: none;
-				position: absolute;
-				top: 5px;
-				z-index: 1000;
-				grid-template-columns: repeat(4, 1fr);
-				grid-template-rows: 1fr;
-				grid-template-areas: "categorias subcategorias subcategorias subcategorias";
- 			}
-		}
  	}
 }
