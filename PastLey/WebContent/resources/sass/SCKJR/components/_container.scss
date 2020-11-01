@@ -1,0 +1,18 @@
+@if $--project-element {
+
+	$--element: getMap($default, ("all", "container"));
+	$--element-statu: getMap($--element, ("statu"));
+	$--element-name-type: #{getMap($--element, ("name", "type"))};
+	$--element-name: #{getMap($--element, ("name", "title"))}#{getMap($--element, ("name", "symbol"))};
+	@if $--element-statu{
+	   /***************************************************
+ 		******************** CONTAINER ********************
+ 		***************************************************/
+ 		#{$--element-name-type}#{$--project-name}#{$--element-name}{
+ 			margin: auto;
+			width: 90%;
+			max-width: 75em;
+			position: relative;
+ 		} 
+ 	}
+}

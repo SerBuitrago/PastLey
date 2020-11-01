@@ -1,0 +1,99 @@
+@if $--project-element {
+
+	$--element: getMap($default, ("all", "navbar"));
+	$--element-statu: getMap($--element, ("statu"));
+	$--element-name: #{getMap($--element, ("name", "title"))}#{getMap($--element, ("name", "symbol"))};
+	
+	@if $--element-statu{
+	   /***************************************************
+ 		********************* NAVBAR **********************
+ 		***************************************************/
+ 		
+ 		$--element-children-1: getMap($--element, ("all", "advanced"));
+ 		$--element-children-1-color: getMap($--element-children-1, ("color", "primary"));
+ 		$--element-children-1-color-item: getMap($--element-children-1, ("color", "item", "primary"));
+ 		$--element-children-1-statu: getMap($--element-children-1, ("statu"));
+ 		$--element-children-1-name-type: #{getMap($--element-children-1, ("name", "type"))};
+		$--element-children-1-name-title: #{getMap($--element-children-1, ("name", "title"))};
+		$--element-children-1-name-symbol: #{getMap($--element-children-1, ("name", "symbol"))};
+		$--element-children-1-all: #{$--project-name}#{$--element-name}#{$--element-children-1-name-title};
+		@if $--element-children-1-statu{
+		   /***************************************************
+ 			** ADVANCED
+ 			***************************************************/
+ 			#{$--element-children-1-name-type}#{$--element-children-1-all}{
+ 				background: nth($--element-children-1-color, 1);
+ 				color: nth($--element-children-1-color, 2);
+				padding: 0.3125em 0;
+				margin-bottom: 1.25em;
+				$--element-children-1-1-all: #{$--element-children-1-all}#{$--element-children-1-name-symbol}container-buttons;
+				.#{$--element-children-1-1-all}{
+					display: none;
+					justify-content: space-between;
+					button{
+						font-size: 1em;
+						color: nth($--element-children-1-color, 2);
+						padding: 10px 20px;
+						border: 1px solid transparent;
+						display: inline-block;
+						cursor: pointer;
+						background: none;
+						&:hover{
+							border: 1px solid rgba(nth($--element-children-1-color, 2), .4);				
+						}
+						$--element-children-1-1-1-all: #{$--element-children-1-1-all}-close;
+						.#{$--element-children-1-1-1-all}{
+							display: none;
+						}
+						$--element-children-1-1-2-all: #{$--element-children-1-1-all}-menu;
+						.#{$--element-children-1-1-2-all}{
+							display: inline-block;
+						}
+					}
+				}
+				$--element-children-1-2-all: #{$--element-children-1-all}#{$--element-children-1-name-symbol}container-links;
+				.#{$--element-children-1-2-all}{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					$--element-children-1-2-1-all: #{$--element-children-1-2-all}-advanced;
+					.#{$--element-children-1-2-1-all}{
+						color: nth($--element-children-1-color, 2);
+						padding: 7px;
+						border-radius: 3px;
+						display: flex;
+						align-items: flex-end;
+						border: 1px solid transparent;
+						font-size: 0.75em;
+						cursor: default;
+						i {
+							margin-left: 20px;
+							position: relative;
+							bottom: 3px;
+						}
+						span {
+							display: block;
+							font-size: 0.875em;
+							font-weight: bold;
+						}
+						&:hover{
+							border: 1px solid rgba(nth($--element-children-1-color, 2), .4);
+						}
+					}
+					$--element-children-1-2-2-all: #{$--element-children-1-2-all}-items;
+					.#{$--element-children-1-2-2-all}{
+						color: nth($--element-children-1-color-item, 1);
+						border: 1px solid transparent;
+						padding: 7px;
+						border-radius: 3px; 
+						text-decoration: none;
+						font-size: 0.875em;
+						&:hover{
+							border: 1px solid rgba(nth($--element-children-1-color-item, 2),.4);
+						}
+					}
+				}
+ 			}
+		}
+ 	}
+}

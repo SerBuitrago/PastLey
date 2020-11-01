@@ -1,0 +1,40 @@
+
+@if $--project-element {
+
+	$--element: getMap($default, ("all", "body"));
+	$--element-statu: getMap($--element, ("statu"));
+	$--element-name: #{getMap($--element, ("name", "title"))}#{getMap($--element, ("name", "symbol"))};
+	
+	@if $--element-statu{
+	   /***************************************************
+ 		********************** BODY ***********************
+ 		***************************************************/
+		@import url(''+#{$--project-font-family-url}+'&family=#{$--project-font-family-2-url}');
+
+		*,
+		*:before,
+		*:after {
+  			margin: 0;
+   			padding: 0;
+   			-webkit-box-sizing: border-box;
+   			-moz-box-sizing: border-box;
+   			box-sizing: border-box;
+		}
+
+		$--element: getMap($default, ("all", "body"));
+		$--element-size: getMap($--element, ("font", "size"));
+
+		body{
+   			overflow-x: hidden; 
+   			font-size: nth($--element-size, 1);
+   			font-family: $--project-font-family;
+   			background-color: nth(getMap($project, ("color", "body")), 1); 
+   			color: nth(getMap($project, ("color", "body")), 2); 
+   			&.#{$--project-name}#{$--element-name}{
+      			display: flex; 
+      			flex-wrap: wrap; 
+      			min-height: 100vh;
+   			}
+		}
+	}
+}
