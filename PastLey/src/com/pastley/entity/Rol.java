@@ -38,6 +38,9 @@ public class Rol implements Serializable {
 		return "Rol [ nombre=" + nombre + ", estado=" + estado + "]";
 	}
 
+	///////////////////////////////////////////////////////
+	// Getter and Setters
+	///////////////////////////////////////////////////////
 	public String getNombre() {
 		return nombre;
 	}
@@ -56,10 +59,5 @@ public class Rol implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}
-
-	///////////////////////////////////////////////////////
-	// Getter and Setters
-	///////////////////////////////////////////////////////
-	
+	}	
 }

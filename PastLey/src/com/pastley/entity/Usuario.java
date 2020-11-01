@@ -2,7 +2,18 @@ package com.pastley.entity;
 
 import java.io.Serializable;
 
+/**
+ * Implementation Usuario.
+ * 
+ * @author DeveUp.
+ * @phone 3118398189.
+ * @email deveup@gmail.com.
+ * @version 1.0.0.0.
+ */
 public class Usuario implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
 	private Persona persona;
 	private Rol rol;
 	private String clave;
@@ -13,6 +24,16 @@ public class Usuario implements Serializable{
 	private boolean estado;
 	private int cantidad;
 	
+	
+	///////////////////////////////////////////////////////
+	// Builders
+	///////////////////////////////////////////////////////
+	public Usuario() {
+	}
+	
+	///////////////////////////////////////////////////////
+	// Getter and Setters
+	///////////////////////////////////////////////////////
 	public Persona getPersona() {
 		return persona;
 	}

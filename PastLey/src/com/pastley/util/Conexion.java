@@ -44,7 +44,6 @@ public class Conexion implements Serializable{
 		try {
 			Class.forName(driver);
 			c = (Connection) DriverManager.getConnection(url + dbName + time, user, password);
-			System.out.println("Exitosa");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -62,12 +61,6 @@ public class Conexion implements Serializable{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	
-	public static void main(String[] args) {
-		Conexion c= new Conexion();
-		c.getConexion();
 	}
 	
 	///////////////////////////////////////////////////////
